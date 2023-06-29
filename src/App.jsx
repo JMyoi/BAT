@@ -35,15 +35,20 @@ function BudgetTracker(){
       </tr>)
     })
     
-    function handleSubmit(event){
-      event.preventDefault();
+    function handleSubmit(e){
+      e.preventDefault();
+      const formInput = e.target;
+      let Transaction = formInput.transactionInput.value;
+      let Date = formInput.dateInput.value;
+      let Amount = formInput.amountInput.value;
 
+      let NewInput = {
+        transaction:Transaction,
+        date:Date,
+        Amount
+      };
       setTransactionInputs(
-        [ {
-          transaction:{},
-          date:{},
-          amount:{}
-        } , ...transactionInputs]
+        [ NewInput, ...transactionInputs]
       );
 
 
@@ -59,12 +64,12 @@ function BudgetTracker(){
     
     <form onSubmit = {handleSubmit}>
       <label htmlFor = "transactionInput"> Transaction: </label>
-        <input id = "transactionInput" type="text" />
+        <input id = "transactionInput" type="text" required/>
       <label htmlFor ="dateInput" >date: </label>
-        <input id = "dateInput" type="date" />
+        <input id = "dateInput" type="date" required/>
       <label htmlFor = "amountInput">amount: </label>
-        <input id ="amountInput" type="number" />
-      <input type="submit" onClick = {handleSubmit} />
+        <input id ="amountInput" type="number" required/>
+      <input type="submit" />
     </form>
 
     <div id = "TableDiv">
