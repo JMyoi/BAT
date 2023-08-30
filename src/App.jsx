@@ -18,7 +18,7 @@ function TotalInfo(){
   </div>);
 }
  
-
+//what
 function Form(){
   //this state holds an array of objects with transaction, data, and amount keys.
 const[transactionInputs, setTransactionInputs] = useState([]);  
@@ -34,6 +34,7 @@ const[transactionInputs, setTransactionInputs] = useState([]);
 
         },
         ...transactionInputs]
+        //form.reset(); if you want the form to reset.
       );
 
     } 
