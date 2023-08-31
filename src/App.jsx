@@ -1,7 +1,7 @@
 import './App.css'
 import {useState} from 'react'
 import HeaderToolbar from './HeaderToolbar'
-
+//wait a minute wait a minute wait a minute 
 function TotalInfo(){
   let totalBalance = 1000000;
   let totalSpent = 234039;
